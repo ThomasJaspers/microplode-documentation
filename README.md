@@ -6,7 +6,7 @@
 
 All messages are sent as JSON strings. The content of the different messages is described in the following.
 
-![alt tag](https://github.com/ThomasJaspers/microplode-documentation/events-overview.png)
+![alt tag](https://github.com/ThomasJaspers/microplode-documentation/blob/master/events-overview.png)
 
 ### new-game-event
 
