@@ -92,6 +92,8 @@ Following information must be submitted:
 + Type of each player (computer or human)
 + Unique identifier for each player
 
+Open a browser or CURL [http://localhost:8080/gameservice/start-new-game](http://localhost:8080/gameservice/start-new-game)
+
 __Example:__
 <pre>
 {
@@ -113,6 +115,7 @@ __Example:__
 
 
 <a name="new-game-event"></a>
+
 ### move-event
 
 Following information must be submitted:
