@@ -3,14 +3,14 @@
 ------------------------------------------------------------------------------------------------------------
 
 <a name="table-of-contents"></a>
-__Table of Contents__   
+__Table of Contents__
 
 * [Purpose of this Project](#purpose-of-this-project)
-* [The Game](#the-game)   
-* [The Board](#the-board)   
-* [Messaging](#messaging)   
-    * [new-game-event](#new-game-event)    
-    * [move-event](#move-event)    
+* [The Game](#the-game)
+* [The Board](#the-board)
+* [Messaging](#messaging)
+    * [new-game-event](#new-game-event)
+    * [move-event](#move-event)
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ as a monolith. Finally hopefully in the end there will be a working game.
 Beside this documention that should always reflect the latest state of the project there is a series of blog posts
 that are linked in the following. Those are dealing with the technologies used and experiences made in more detail.
 
-[A Microservices Experiment](https://blog.codecentric.de/en/2015/11/microplode-a-microservices-experiment/)    
+[A Microservices Experiment](https://blog.codecentric.de/en/2015/11/microplode-a-microservices-experiment/)
 
 [top](#table-of-contents)
 
@@ -33,7 +33,7 @@ that are linked in the following. Those are dealing with the technologies used a
 <a name="the-game"></a>
 ## The Game
 
-The game idea is leant on a known game principle, namely [Hexaplode](https://en.wikipedia.org/wiki/Hexplode).
+The game idea is leant on a known game principle, namely [Hexplode](https://en.wikipedia.org/wiki/Hexplode).
 To simplify things *MicroPlode* is played on a plain 10x10 board as also described in more detail later on.
 
 Players are making moves in turns. On a player's turn that player can occupy an empty field and thus giving it a load of 1.
