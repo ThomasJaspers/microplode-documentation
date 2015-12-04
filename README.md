@@ -11,7 +11,9 @@ __Table of Contents__
 * [Messaging](#messaging)
     * [new-game-event](#new-game-event)
     * [move-event](#move-event)
-
+	* [initialize-event](#initialize-event)
+	* [board-changed-event](#board-changed-event)
+	
 ------------------------------------------------------------------------------------------------------------
 
 <a name="purpose-of-this-project"></a>
@@ -101,11 +103,12 @@ __Example:__
         "type": "new-game",
         "playerList": {
             "playerDef": {
-                "id": "player1",
-                "type": "human"
+                "id": "1",
+                "type": "human",
+				
             }
             "playerDef": {
-                "id": "player2",
+                "id": "2",
                 "type": "computer"
             }
         }
@@ -114,8 +117,7 @@ __Example:__
 </pre>
 
 
-<a name="new-game-event"></a>
-
+<a name="move-event"></a>
 ### move-event
 
 Following information must be submitted:
@@ -127,11 +129,73 @@ __Example:__
 {
     "event": {
         "type": "move",
-        "playerId": "player1",
+        "playerId": "1",
         "field-row": 1,
-		"field-col": 9,
+		"field-col": 9
 	}
 }
 </pre>
 
 [top](#table-of-contents)
+
+<a name="initialize-event"></a>
+### initialize-event
+
+Following information must be submitted:
++ Basically nothing as this simply resets the board
+
+__Example:__
+<pre>
+{
+    "event": {
+        "type": "initialize"
+	}
+}
+</pre>
+
+[top](#table-of-contents)
+
+
+<a name="board-changed-event"></a>
+### board-changed-event
+
+Following information must be submitted:
++ List of all fields and their current state
++ This includes owner and load
+
+
+__Example:__
+<pre>
+{
+    "event": {
+        "type": "board-changed-game",
+        "fieldList": {
+            "field": {
+                "row": 0,
+                "col": 0,
+				"load": 2,
+				"playerId": "1"
+            }
+            "field": {
+                "row": 0,
+                "col": 1,
+				"load": 0,
+				"playerId": ""
+            }
+			"field": {
+                "row": 0,
+                "col": 2,
+				"load": 4,
+				"playerId": "2"
+            }
+			...
+			"field": {
+                "row": 9,
+                "col": 9,
+				"load": 0,
+				"playerId": ""
+            }
+        }
+    }
+}
+</pre>
