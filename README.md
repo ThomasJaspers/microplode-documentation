@@ -13,6 +13,7 @@ __Table of Contents__
     * [move-event](#move-event)
 	* [initialize-event](#initialize-event)
 	* [board-changed-event](#board-changed-event)
+	* [next-turn-event](#next-turn-event)
 	
 ------------------------------------------------------------------------------------------------------------
 
