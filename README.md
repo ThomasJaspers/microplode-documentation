@@ -52,24 +52,24 @@ midlle of the board is having 8 neighbouring fields.
 <a name="the-board"></a>
 ## The Board
 
-For the time being the board always consists of 10x10 fields. Each field is identified by a unique number as
-shown in the following:
+For the time being the board always consists of 10x10 fields. Each field is identified by a pair of numbers identifying first 
+the line and then the row of the filed. This is shown in the following:
 
 <pre>
-|-----------------------------------------------------------|
-|  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |
-|-----------------------------------------------------------|
-|  10 |  11 |  12 |  13 |  14 |  15 |  16 |  17 |  18 |  19 |
-|-----------------------------------------------------------|
-|  20 |  21 |  22 |  23 |  24 |  25 |  26 |  27 |  28 |  29 |
-|-----------------------------------------------------------|
+|-------------------------------------------------------------------------------|
+|  0/0  |  0/1  |  0/2  |  0/3  |  0/4  |  0/5  |  0/6  |  0/7  |  0/8  |  0/9  |
+|-------------------------------------------------------------------------------|
+|  1/0  |  1/1  |  1/2  |  1/3  |  1/4  |  1/5  |  1/6  |  1/7  |  1/8  |  1/9  |
+|-------------------------------------------------------------------------------|
+|  2/0  |  2/1  |  2/2  |  2/3  |  2/4  |  2/5  |  2/6  |  2/7  |  2/8  |  2/9  |
+|-------------------------------------------------------------------------------|
 ...
-|-----------------------------------------------------------|
-|  90 |  91 |  92 |  93 |  94 |  95 |  96 |  97 |  98 |  99 |
-|-----------------------------------------------------------|
+|-------------------------------------------------------------------------------|
+|  9/0  |  9/1  |  9/2  |  9/3  |  9/4  |  9/5  |  9/6  |  9/7  |  9/8  |  9/9  |
+|-------------------------------------------------------------------------------|
 </pre>
 
-Whenever the board is referred to fields are identified by its number as shown above.
+Whenever the board is referred to fields are identified by this pair of number as shown above.
 
 [top](#table-of-contents)
 
@@ -120,7 +120,7 @@ __Example:__
 
 Following information must be submitted:
 + Id of the player that made the move
-+ Number of the field the move is made according to the agreed board representation shown above
++ The field the move is made according to the agreed board representation shown above
 
 __Example:__
 <pre>
@@ -128,8 +128,9 @@ __Example:__
     "event": {
         "type": "move",
         "playerId": "player1",
-        "field": 45
-    }
+        "field-row": 1,
+		"field-col": 9,
+	}
 }
 </pre>
 
