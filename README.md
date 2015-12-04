@@ -199,3 +199,24 @@ __Example:__
     }
 }
 </pre>
+
+[top](#table-of-contents)
+
+
+<a name="next-turn-event"></a>
+### next-turn-event
+
+Following information must be submitted:
++ The id of the player to make the next move
+
+__Example:__
+<pre>
+{
+    "event": {
+        "type": "next-turn",
+		"playerId": 2
+	}
+}
+</pre>
+
+[top](#table-of-contents)
