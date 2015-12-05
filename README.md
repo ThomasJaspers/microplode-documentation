@@ -8,6 +8,7 @@ __Table of Contents__
 * [Purpose of this Project](#purpose-of-this-project)
 * [The Game](#the-game)
 * [The Board](#the-board)
+* [Repositories](#repositories)
 * [Messaging](#messaging)
     * [new-game-event](#new-game-event)
     * [move-event](#move-event)
@@ -77,8 +78,17 @@ Whenever the board is referred to fields are identified by this pair of number a
 [top](#table-of-contents)
 
 ------------------------------------------------------------------------------------------------------------
+<a name="repositories"></a>
+## Repositories
 
-<a name="the-board"></a>
+* <https://github.com/ThomasJaspers/microplode-presentationservice>
+* <https://github.com/ThomasJaspers/microplode-documentation>
+* <https://github.com/ThomasJaspers/microplode-boardservice>
+* <https://github.com/ThomasJaspers/microplode-gameservice>
+* <https://github.com/ThomasJaspers/microplode-computerplayerservice>
+
+------------------------------------------------------------------------------------------------------------
+<a name="messaging"></a>
 ## Messaging
 
 All messages are sent as JSON strings. The following figure shows an overview of the events to be sent.
