@@ -110,6 +110,7 @@ http://localhost:15672/
 </pre>
 with user and pw "guest".
 
+To start the presentation service, refer to [its README](https://github.com/ThomasJaspers/microplode-presentationservice/blob/master/README.md). TL;DR: `git clone git@github.com:ThomasJaspers/microplode-presentationservice.git`, `npm install`, `npm start`.
 
 [top](#table-of-contents)
 
