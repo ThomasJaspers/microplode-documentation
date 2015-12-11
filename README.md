@@ -9,6 +9,7 @@ __Table of Contents__
 * [The Game](#the-game)
 * [The Board](#the-board)
 * [Repositories](#repositories)
+* [HowTo](#howto)
 * [Messaging](#messaging)
     * [new-game-event](#new-game-event)
     * [move-event](#move-event)
@@ -86,6 +87,29 @@ Whenever the board is referred to fields are identified by this pair of number a
 * <https://github.com/ThomasJaspers/microplode-boardservice>
 * <https://github.com/ThomasJaspers/microplode-gameservice>
 * <https://github.com/ThomasJaspers/microplode-computerplayerservice>
+
+[top](#table-of-contents)
+
+------------------------------------------------------------------------------------------------------------
+<a name="howto"></a>
+## HowTo
+
+You should get a Terminal (with Tabs!) started and install a RabbitMQ-Server, e.g. via brew install rabbit
+
+You can start the board, game and computerplayerservice via simple
+
+<pre>
+mvn clean package
+
+java -jar target/microplode-XYZservice-0.1-SNAPSHOT.jar
+</pre>
+
+If you want to know, what´s going on inside the Messaging-Infrastructure, you could simply use the [RabbitMQ-Management-Plugin](https://www.rabbitmq.com/management.html) (which should be pre-installed in your installation) - open your Browser and type 
+<pre>
+http://localhost:15672/
+</pre>
+with user and pw "guest".
+
 
 [top](#table-of-contents)
 
