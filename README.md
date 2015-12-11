@@ -15,7 +15,7 @@ __Table of Contents__
 	* [initialize-event](#initialize-event)
 	* [board-changed-event](#board-changed-event)
 	* [next-turn-event](#next-turn-event)
-	
+
 ------------------------------------------------------------------------------------------------------------
 
 <a name="purpose-of-this-project"></a>
@@ -56,7 +56,7 @@ midlle of the board is having 8 neighbouring fields.
 <a name="the-board"></a>
 ## The Board
 
-For the time being the board always consists of 10x10 fields. Each field is identified by a pair of numbers identifying first 
+For the time being the board always consists of 10x10 fields. Each field is identified by a pair of numbers identifying first
 the line and then the row of the filed. This is shown in the following:
 
 <pre>
@@ -118,7 +118,7 @@ __Example:__
             "playerDef": {
                 "id": "1",
                 "type": "human",
-				
+
             }
             "playerDef": {
                 "id": "2",
@@ -182,33 +182,33 @@ __Example:__
 {
     "event": {
         "type": "board-changed-game",
-        "fieldList": {
-            "field": {
+        "fieldList": [
+            {
                 "row": 0,
                 "col": 0,
 				"load": 2,
 				"playerId": "1"
-            }
-            "field": {
+            },
+            {
                 "row": 0,
                 "col": 1,
 				"load": 0,
 				"playerId": ""
-            }
-			"field": {
+            },
+			{
                 "row": 0,
                 "col": 2,
 				"load": 4,
 				"playerId": "2"
-            }
+            },
 			...
-			"field": {
+			{
                 "row": 9,
                 "col": 9,
 				"load": 0,
 				"playerId": ""
             }
-        }
+        ]
     }
 }
 </pre>
