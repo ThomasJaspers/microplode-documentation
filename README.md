@@ -87,6 +87,8 @@ Whenever the board is referred to fields are identified by this pair of number a
 * <https://github.com/ThomasJaspers/microplode-gameservice>
 * <https://github.com/ThomasJaspers/microplode-computerplayerservice>
 
+[top](#table-of-contents)
+
 ------------------------------------------------------------------------------------------------------------
 <a name="messaging"></a>
 ## Messaging
