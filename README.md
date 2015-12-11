@@ -104,7 +104,7 @@ mvn clean package
 java -jar target/microplode-XYZservice-0.1-SNAPSHOT.jar
 </pre>
 
-If you want to know, what´s going on inside the Messaging-Infrastructure, you could simply use the [RabbitMQ-Management-Plugin](https://www.rabbitmq.com/management.html) (which should be pre-installed in your installation) - open your Browser and type 
+If you want to know, what´s going on inside the Messaging-Infrastructure, you could simply use the [RabbitMQ-Management-Plugin](https://www.rabbitmq.com/management.html) (which should be pre-installed in your installation) - open your Browser and type
 <pre>
 http://localhost:15672/
 </pre>
@@ -206,7 +206,7 @@ __Example:__
 <pre>
 {
     "event": {
-        "type": "board-changed-game",
+        "type": "board-changed",
         "fieldList": [
             {
                 "row": 0,
