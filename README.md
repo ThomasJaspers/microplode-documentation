@@ -5,19 +5,24 @@
 <a name="table-of-contents"></a>
 __Table of Contents__
 
-* [Purpose of this Project](#purpose-of-this-project)
-* [The Game](#the-game)
-* [The Board](#the-board)
-* [Repositories](#repositories)
-* [HowTo](#howto)
-* [Messaging](#messaging)
+* [Introduction](#introduction)
+  * [Purpose of this Project](#purpose-of-this-project)
+  * [The Game](#the-game)
+* [Development Environment](#development-environment)  
+  * [Repositories](#repositories)
+  * [HowTo](#howto)
+* [Service Interfaces](#service-interfaces)
+  * [The Board](#the-board)
+  * [Messaging](#messaging)
     * [new-game-event](#new-game-event)
     * [move-event](#move-event)
 	* [initialize-event](#initialize-event)
 	* [board-changed-event](#board-changed-event)
 	* [next-turn-event](#next-turn-event)
 
-------------------------------------------------------------------------------------------------------------
+
+<a name="introduction"></a>
+# Introduction
 
 <a name="purpose-of-this-project"></a>
 ## Purpose of this Project
@@ -29,11 +34,15 @@ as a monolith. Finally hopefully in the end there will be a working game.
 Beside this documention that should always reflect the latest state of the project there is a series of blog posts
 that are linked in the following. Those are dealing with the technologies used and experiences made in more detail.
 
-[A Microservices Experiment](https://blog.codecentric.de/en/2015/11/microplode-a-microservices-experiment/)
+* __Part 1:__ [MicroPlode - A Microservices Experiment](https://blog.codecentric.de/en/2015/11/microplode-a-microservices-experiment/)
+* __Part 2:__ [MicroPlode - Implementing the first Microservice](https://blog.codecentric.de/en/2015/11/microplode-implementing-the-first-microservice/)
+* __Part 3:__ [MicroPlode - Microservices dialogue](https://blog.codecentric.de/en/2015/12/microplode-microservices-dialogue/)
+
+Working on the blog posts is work-in-progress and the plan is to have still a few more as the project advances.
 
 [top](#table-of-contents)
 
-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <a name="the-game"></a>
 ## The Game
@@ -52,7 +61,59 @@ midlle of the board is having 8 neighbouring fields.
 
 [top](#table-of-contents)
 
-------------------------------------------------------------------------------------------------------------
+
+<a name="development-environment"></a>  
+# Development Environment
+
+
+<a name="repositories"></a>
+## Repositories
+
+This is the list of GIT repositories containing the different microservice implementations beloging to this project.
+
+* <https://github.com/ThomasJaspers/microplode-presentationservice>
+* <https://github.com/ThomasJaspers/microplode-boardservice>
+* <https://github.com/ThomasJaspers/microplode-gameservice>
+* <https://github.com/ThomasJaspers/microplode-computerplayerservice>
+
+Following figure shows the interaction of the different microservices.
+
+![alt tag](https://github.com/ThomasJaspers/microplode-documentation/blob/master/events-overview.png)
+
+[top](#table-of-contents)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<a name="howto"></a>
+## HowTo
+
+You should get a Terminal (with Tabs!) started and install a RabbitMQ-Server (e.g. via brew install rabbit on Mac OS).
+
+You can start the board-, game- and computerplayerservice all in the same way:
+
+<pre>
+mvn clean package
+
+java -jar target/microplode-<NAME>service-<VERSION>.jar
+</pre>
+
+To start the presentation service, refer to [its README](https://github.com/ThomasJaspers/microplode-presentationservice/blob/master/README.md)   
+TL;DR: 'git clone git@github.com:ThomasJaspers/microplode-presentationservice.git', 'npm install', 'npm start'.
+
+If you want to know, what is going on inside the Messaging-Infrastructure, you could simply use the [RabbitMQ-Management-Plugin](https://www.rabbitmq.com/management.html) 
+which should be pre-installed in your installation. Therefore open the following URL in a browser:
+
+<pre>
+http://localhost:15672/
+</pre>
+
+(Use guest/guest to login.)
+
+[top](#table-of-contents)
+
+
+<a name="service-interfaces"></a>
+# Service Interfaces
 
 <a name="the-board"></a>
 ## The Board
@@ -79,42 +140,8 @@ Whenever the board is referred to fields are identified by this pair of number a
 [top](#table-of-contents)
 
 ------------------------------------------------------------------------------------------------------------
-<a name="repositories"></a>
-## Repositories
 
-* <https://github.com/ThomasJaspers/microplode-presentationservice>
-* <https://github.com/ThomasJaspers/microplode-documentation>
-* <https://github.com/ThomasJaspers/microplode-boardservice>
-* <https://github.com/ThomasJaspers/microplode-gameservice>
-* <https://github.com/ThomasJaspers/microplode-computerplayerservice>
 
-[top](#table-of-contents)
-
-------------------------------------------------------------------------------------------------------------
-<a name="howto"></a>
-## HowTo
-
-You should get a Terminal (with Tabs!) started and install a RabbitMQ-Server, e.g. via brew install rabbit
-
-You can start the board, game and computerplayerservice via simple
-
-<pre>
-mvn clean package
-
-java -jar target/microplode-XYZservice-0.1-SNAPSHOT.jar
-</pre>
-
-If you want to know, what´s going on inside the Messaging-Infrastructure, you could simply use the [RabbitMQ-Management-Plugin](https://www.rabbitmq.com/management.html) (which should be pre-installed in your installation) - open your Browser and type
-<pre>
-http://localhost:15672/
-</pre>
-with user and pw "guest".
-
-To start the presentation service, refer to [its README](https://github.com/ThomasJaspers/microplode-presentationservice/blob/master/README.md). TL;DR: `git clone git@github.com:ThomasJaspers/microplode-presentationservice.git`, `npm install`, `npm start`.
-
-[top](#table-of-contents)
-
-------------------------------------------------------------------------------------------------------------
 <a name="messaging"></a>
 ## Messaging
 
@@ -201,7 +228,6 @@ Following information must be submitted:
 + List of all fields and their current state
 + This includes owner and load
 
-
 __Example:__
 <pre>
 {
@@ -239,7 +265,6 @@ __Example:__
 </pre>
 
 [top](#table-of-contents)
-
 
 <a name="next-turn-event"></a>
 ### next-turn-event
