@@ -166,17 +166,15 @@ __Example:__
 {
     "event": {
         "type": "new-game",
-        "playerList": {
-            "playerDef": {
+        "playerList": [
+            {
                 "id": "1",
-                "type": "human",
-
-            }
-            "playerDef": {
+                "type": "human"
+            }, {
                 "id": "2",
                 "type": "computer"
             }
-        }
+        ]
     }
 }
 </pre>
